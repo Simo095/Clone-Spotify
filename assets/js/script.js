@@ -32,8 +32,8 @@ const options = {
   method: "GET",
   headers: {
     "X-RapidAPI-Key": "e13be1f8d2msha90dfa9e08e83f5p16dc04jsn33020578052c",
-    "X-RapidAPI-Host": "deezerdevs-deezer.p.rapidapi.com",
-  },
+    "X-RapidAPI-Host": "deezerdevs-deezer.p.rapidapi.com"
+  }
 };
 let queryStr = "";
 const maxCard = 9;
@@ -505,4 +505,4 @@ const setTopBg = event => {
 };
 
 // Aggiungi un gestore di eventi al tuo elemento di scorrimento
-document.querySelector(".home-hero-container").addEventListener("scroll", setTopBg);
+//document.querySelector(".home-hero-container").addEventListener("scroll", setTopBg);

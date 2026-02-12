@@ -1,15 +1,25 @@
 <!DOCTYPE html>
-<html lang="en" data-bs-theme="dark">
+<html
+  lang="en"
+  data-bs-theme="dark">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
     <title>Spotify</title>
-    <link rel="stylesheet" href="node_modules/bootstrap-icons/font/bootstrap-icons.min.css" />
-    <link rel="stylesheet" href="assets/css/style.css" />
+    <link
+      rel="stylesheet"
+      href="node_modules/bootstrap-icons/font/bootstrap-icons.min.css" />
+    <link
+      rel="stylesheet"
+      href="assets/css/style.css" />
   </head>
   <body>
     <div class="vh-100 d-flex flex-column bg-black">
-      <div id="home-container" class="p-2">
+      <div
+        id="home-container"
+        class="p-2">
         <div class="d-flex h-100">
           <div id="sidebar"></div>
           <main class="flex-grow-1">
@@ -26,10 +36,17 @@
                   <button class="btn btn-nero btn-sm me-auto d-none d-lg-block">
                     <i class="bi bi-chevron-right"></i>
                   </button>
-                  <form action="">
+                  <form id="searchForm">
                     <div class="input-group input-group-lg flex-nowrap">
-                      <span class="input-group-text search-box bg-forth" id="addon-wrapping">
-                        <i class="bi bi-search"></i>
+                      <span
+                        class="input-group-text search-box bg-forth"
+                        id="addon-wrapping">
+                        <button
+                          type="submit"
+                          form="searchForm"
+                          style="background: #00000000; border: 0">
+                          <i class="bi bi-search"></i>
+                        </button>
                       </span>
                       <input
                         type="text"
@@ -45,33 +62,68 @@
                   <button class="btn btn-primary btn-sm text-nowrap d-none d-lg-block">
                     <i class="bi bi-box-arrow-down me-2"></i>Installa App
                   </button>
-                  <a href="#" class="">
-                    <img src="assets/imgs/user.jpg" alt="" />
+                  <a
+                    href="#"
+                    class="">
+                    <img
+                      src="assets/imgs/user.jpg"
+                      alt="" />
                   </a>
                 </div>
               </div>
 
               <div class="ps-4 pe-2 pb-0">
-                <div id="query-result" class="d-none">
-                  <div id="result-selector" class="my-3 d-flex gap-2 d-none d-lg-block">
-                    <button class="btn btn-light btn-sm" onclick="filterResult(event)">Tutto</button>
-                    <button class="btn btn-secondary btn-sm" onclick="filterResult(event)">Artisti</button>
-                    <button class="btn btn-secondary btn-sm" onclick="filterResult(event)">PlayList</button>
-                    <button class="btn btn-secondary btn-sm" onclick="filterResult(event)">Album</button>
-                    <button class="btn btn-secondary btn-sm" onclick="filterResult(event)">Brani</button>
+                <div
+                  id="query-result"
+                  class="d-none">
+                  <div
+                    id="result-selector"
+                    class="my-3 d-flex gap-2 d-none d-lg-block">
+                    <button
+                      class="btn btn-light btn-sm"
+                      onclick="filterResult(event)">
+                      Tutto
+                    </button>
+                    <button
+                      class="btn btn-secondary btn-sm"
+                      onclick="filterResult(event)">
+                      Artisti
+                    </button>
+                    <button
+                      class="btn btn-secondary btn-sm"
+                      onclick="filterResult(event)">
+                      PlayList
+                    </button>
+                    <button
+                      class="btn btn-secondary btn-sm"
+                      onclick="filterResult(event)">
+                      Album
+                    </button>
+                    <button
+                      class="btn btn-secondary btn-sm"
+                      onclick="filterResult(event)">
+                      Brani
+                    </button>
                   </div>
 
                   <div class="d-flex">
                     <div class="d-flex flex-column mt-4">
                       <h3>Risultato più rilevante</h3>
-                      <div id="search-artist-box" class="d-flex flex-column p-3 rounded-2 my-3 bg-tertiary">
-                        <img src="assets/imgs/main/image-3.jpg" alt="" class="rounded-circle" />
+                      <div
+                        id="search-artist-box"
+                        class="d-flex flex-column p-3 rounded-2 my-3 bg-tertiary">
+                        <img
+                          src="assets/imgs/main/image-3.jpg"
+                          alt=""
+                          class="rounded-circle" />
                         <h2 class="mt-4 fw-bold">Artist Name</h2>
                         <div><a class="btn btn-primary btn-sm">Artista</a></div>
                       </div>
                     </div>
                     <div class="flex-grow-1 d-none d-lg-block">
-                      <div id="search-artist-side-box" class="d-flex flex-column ps-4 mt-4">
+                      <div
+                        id="search-artist-side-box"
+                        class="d-flex flex-column ps-4 mt-4">
                         <h3>Brani</h3>
                         <div class="d-flex flex-column my-3 p-2"></div>
                       </div>
@@ -113,7 +165,9 @@
           </main>
         </div>
       </div>
-      <div id="player" class="flex-grow-1"></div>
+      <div
+        id="player"
+        class="flex-grow-1"></div>
     </div>
 
     <script

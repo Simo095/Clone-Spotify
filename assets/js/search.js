@@ -4,8 +4,8 @@ const deezerUrl = "https://api.deezer.com/";
 const deezerOptions = {
   mode: "cors",
   headers: {
-    "Access-Control-Allow-Origin": "*",
-  },
+    "Access-Control-Allow-Origin": "*"
+  }
 };
 let queryResp = [];
 let queryRespPlay = [];
@@ -15,7 +15,6 @@ let queryRespArt = [];
 window.onload = async function () {
   cardWidth = 220;
 
-  // console.log(qrId);
   if (qrId) {
     document.getElementById("search-discover").classList.add("d-none");
     document.getElementById("query-result").classList.remove("d-none");
@@ -25,17 +24,17 @@ window.onload = async function () {
 
     const elm = document.querySelector(".track-result");
     printCardq(elm, queryResp);
-
+    setTimeout(deezerQuery, 5000);
     queryRespPlay = await deezerQuery("search/playlist?q=" + qrId);
     queryRespPlay = queryRespPlay.data;
     const elmP = document.querySelector(".playlist-result");
     printCardp(elmP, queryRespPlay);
-
+    setTimeout(deezerQuery, 5000);
     queryRespAlb = await deezerQuery("search/album?q=" + qrId);
     queryRespAlb = queryRespAlb.data;
     const elmA = document.querySelector(".album-result");
     printCarda(elmA, queryRespAlb);
-
+    setTimeout(deezerQuery, 5000);
     queryRespArt = await deezerQuery("search/artist?q=" + qrId);
     queryRespArt = queryRespArt.data;
     const elmAr = document.querySelector(".artist-result");
@@ -52,24 +51,24 @@ async function search(event) {
   document.getElementById("search-discover").classList.add("d-none");
   document.getElementById("query-result").classList.remove("d-none");
   const qrStr = event.target.query.value;
-  queryResp = await query("search?q=" + qrId);
+  queryResp = await query("search?q=" + qrStr);
   queryResp = queryResp.data;
   printResult();
 
   const elm = document.querySelector(".track-result");
   printCardq(elm, queryResp);
 
-  queryRespPlay = await deezerQuery("search/playlist?q=" + qrId);
+  queryRespPlay = await deezerQuery("search/playlist?q=" + qrStr);
   queryRespPlay = queryRespPlay.data;
   const elmP = document.querySelector(".playlist-result");
   printCardp(elmP, queryRespPlay);
 
-  queryRespAlb = await deezerQuery("search/album?q=" + qrId);
+  queryRespAlb = await deezerQuery("search/album?q=" + qrStr);
   queryRespAlb = queryRespAlb.data;
   const elmA = document.querySelector(".album-result");
   printCarda(elmA, queryRespAlb);
 
-  queryRespArt = await deezerQuery("search/artist?q=" + qrId);
+  queryRespArt = await deezerQuery("search/artist?q=" + qrStr);
   queryRespArt = queryRespArt.data;
   const elmAr = document.querySelector(".artist-result");
   printCardArtist(elmAr, queryRespArt);
